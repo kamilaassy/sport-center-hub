@@ -3,10 +3,6 @@
 -- Fixes: users/auth, updated pricing (Surabaya)
 -- =============================================
 
-CREATE DATABASE IF NOT EXISTS sport_center_hub
-  CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE sport_center_hub;
-
 -- ── Users (Admin & Customer) ──
 CREATE TABLE IF NOT EXISTS users (
   id           INT AUTO_INCREMENT PRIMARY KEY,
@@ -55,7 +51,7 @@ INSERT IGNORE INTO users (name, email, password, role, phone) VALUES
 ('Hub Admin',    'admin@sporthub.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin',    NULL),
 ('John Doe',     'john@example.com',   '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'customer', '081234567890'),
 ('Sarah Wilson', 'sarah@example.com',  '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'customer', '082345678901');
--- NOTE: all passwords above are "password" (bcrypt hash). Change before production!
+
 
 -- ── Seed: Courts (Surabaya Barat pricing) ──
 INSERT IGNORE INTO courts (name, type, price_per_hour, description) VALUES
